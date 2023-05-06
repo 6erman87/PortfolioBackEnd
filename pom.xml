@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.6</version>
-        <relativePath/>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.porfolio</groupId>
     <artifactId>BackEnd</artifactId>
@@ -68,12 +68,13 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
-        
+        <!-- apache -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
 
+        <!-- corrigiendo el error de javax -->  
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
@@ -96,6 +97,7 @@
             </plugin>
             
             <plugin>
+                <!-- corrige el error de "Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12:test (default-test)"-->  
 
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
