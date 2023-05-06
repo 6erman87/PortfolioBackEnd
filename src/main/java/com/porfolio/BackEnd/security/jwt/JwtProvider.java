@@ -8,6 +8,7 @@ import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
+
 import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,7 @@ public class JwtProvider {
             UsuarioPrincipal usuarioPrincipal = (UsuarioPrincipal) authentication.getPrincipal();
             return Jwts.builder().setSubject(usuarioPrincipal.getUsername())
                     .setIssuedAt(new Date())
-                    .setExpiration(new Date(new Date().getTime()+expiration*1000))
+                    .setExpiration(new Date(new Date().getTime() + expiration * 1000))
                     .signWith(SignatureAlgorithm.HS512, secret)
                     .compact();
         }
@@ -42,15 +43,15 @@ public class JwtProvider {
                 Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
                 return true;
             }catch (MalformedJwtException e){
-                logger.error("Token mal formado");
+                logger.error("token mal formado");
             }catch (UnsupportedJwtException e){
-                logger.error("Token no soportado");
+                logger.error("token no soportado");
             }catch (ExpiredJwtException e){
-                logger.error("Token expirado");
+                logger.error("token expirado");
             }catch (IllegalArgumentException e){
-                logger.error("Token vacío");
+                logger.error("token vacío");
             }catch (SignatureException e){
-                logger.error("Firma no válida");
+                logger.error("firma no válida");
             }
             return false;
         }

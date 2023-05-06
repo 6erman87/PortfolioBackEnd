@@ -16,8 +16,8 @@ public class JwtEntryPoint implements AuthenticationEntryPoint {
     private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
 
     @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        logger.error("Falló el método commence ");
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authenticationException) throws IOException, ServletException {
+        logger.error("Falló el método commence");
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
     }
     

@@ -1,6 +1,6 @@
 package com.porfolio.BackEnd.security;
 
-import com.porfolio.BackEnd.security.Service.UserDetailsImpl;
+//import com.porfolio.BackEnd.security.Service.UserDetailsImpl;
 import com.porfolio.BackEnd.security.jwt.JwtEntryPoint;
 import com.porfolio.BackEnd.security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +20,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity
+@EnableMethodSecurity(prePostEnabled = true)
 public class MainSecurity {
 
-    @Autowired
-    UserDetailsImpl userDetailsServiceImpl;
+//    @Autowired
+////    UserDetailsImpl userDetailsServiceImpl;
 
     @Autowired
     JwtEntryPoint jwtEntryPoint;
@@ -37,7 +37,7 @@ public class MainSecurity {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
+    }      
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
