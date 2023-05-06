@@ -12,12 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 public class JwtTokenFilter extends OncePerRequestFilter {
 //    Se ejecuta una vez por cada petición
 
-    private final static Logger logger = LoggerFactory.getLogger(JwtTokenFilter.class);
+    private final static Logger Logger = LoggerFactory.getLogger(JwtTokenFilter.class);
 
     @Autowired
     JwtProvider jwtProvider;
@@ -35,8 +36,8 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                         null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
-        } catch (Exception e) {
-            logger.error("Falló el metodo doFilterInternal");
+        } catch (UsernameNotFoundException e) {
+            Logger.error("Falló el metodo doFilterInternal");
         }
         filterChain.doFilter(request, response);
     }
