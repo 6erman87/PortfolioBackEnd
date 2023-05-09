@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM openjdk:21-ea-jdk
 
 COPY target/BackEnd-0.0.1-SNAPSHOT.jar app.jar
 
