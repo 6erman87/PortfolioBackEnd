@@ -4,13 +4,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Hardsoft {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @NotNull
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String nombre;
+    
+    @Min(value = 0, message="el porcentaje mínimo es 0")
+    @Max(value = 100, message="el porcentaje máximo es 100")
     private int porcentaje;
 
     public Hardsoft() {

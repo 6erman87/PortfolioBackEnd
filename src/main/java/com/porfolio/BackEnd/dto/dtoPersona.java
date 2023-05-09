@@ -1,13 +1,15 @@
-
 package com.porfolio.BackEnd.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
 public class dtoPersona {
+
     @NotBlank
     private String nombre;
     @NotBlank
     private String apellido;
+    @NotBlank
+    private String profesion;
     @NotBlank
     private String descripcion;
     @NotBlank
@@ -19,6 +21,7 @@ public class dtoPersona {
     public dtoPersona(String nombre, String apellido, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.apellido = profesion;
         this.descripcion = descripcion;
         this.img = img;
     }
@@ -36,7 +39,15 @@ public class dtoPersona {
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        this.apellido = apellido;     
+    }            
+
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String descripcion) {
+        this.profesion = descripcion;
     }
 
     public String getDescripcion() {
