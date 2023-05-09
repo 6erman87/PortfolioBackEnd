@@ -1,4 +1,4 @@
-FROM openjdk:21-ea-jdk
+FROM amazoncorretto:11-alpine-jdk
 
 COPY target/BackEnd-0.0.1-SNAPSHOT.jar app.jar
 
