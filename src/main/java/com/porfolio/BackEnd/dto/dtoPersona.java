@@ -18,10 +18,10 @@ public class dtoPersona {
     public dtoPersona() {
     }
 
-    public dtoPersona(String nombre, String apellido, String descripcion, String img) {
+    public dtoPersona(String nombre, String apellido, String profesion, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.apellido = profesion;
+        this.profesion = profesion;
         this.descripcion = descripcion;
         this.img = img;
     }
@@ -46,7 +46,7 @@ public class dtoPersona {
         return profesion;
     }
 
-    public void setProfesion(String descripcion) {
+    public void setProfesion(String profesion) {
         this.profesion = descripcion;
     }
 
