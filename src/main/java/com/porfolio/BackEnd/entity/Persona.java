@@ -23,21 +23,29 @@ public class Persona {
     private String apellido;
 
     @NotNull
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String profesion;
 
     @NotNull
+    @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String descripcion;
+    
+    @Size(min = 1, max = 200, message = "no cumple con la longitud")
+    private String banner;
 
+    @NotNull
+    @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String img;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String profesion, String descripcion, String img) {
+    public Persona(String nombre, String apellido, String profesion, String descripcion, String banner, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.profesion = profesion;
         this.descripcion = descripcion;
+        this.banner = banner;
         this.img = img;
     }
 
@@ -79,6 +87,14 @@ public class Persona {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    
+       public String getBanner() {
+        return banner;
+    }
+
+    public void setBanner(String banner) {
+        this.img = banner;
     }
 
     public String getImg() {

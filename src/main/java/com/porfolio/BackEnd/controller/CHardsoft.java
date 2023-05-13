@@ -72,7 +72,7 @@ public class CHardsoft {
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoHardsoft dtohardsoft) {
         //Validamos si existe el ID
         if (!shardsoft.existsById(id)) {
-            return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
         }
         //Compara nombre de skills
         if (shardsoft.existsByNombre(dtohardsoft.getNombre()) && shardsoft.getByNombre(dtohardsoft.getNombre()).get()

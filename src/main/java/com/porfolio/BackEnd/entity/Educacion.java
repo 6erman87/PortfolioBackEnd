@@ -4,23 +4,36 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+//import jakarta.validation.constraints.NotNull;
+//import jakarta.validation.constraints.Size;
 
 @Entity
 public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nombreE;
-    private String descripcionE;
+
+    private String nombreD;
+
+    private String descripcionD;
+    
+    private String periodoD;
+    
+    private String imgD;
 
     public Educacion() {
     }
 
-    public Educacion(String nombreE, String descripcionE) {
-        this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
+    public Educacion(String nombreD, String descripcionD, String periodoD, String imgD) {
+        this.nombreD = nombreD;
+        this.descripcionD = descripcionD;
+        this.periodoD = periodoD;
+        this.imgD = imgD;
+
     }
 
+    //Getters and setters
+    
     public int getId() {
         return id;
     }
@@ -29,21 +42,36 @@ public class Educacion {
         this.id = id;
     }
 
-    public String getNombreE() {
-        return nombreE;
+    public String getNombreD() {
+        return nombreD;
     }
 
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
+    public void setNombreD(String nombreD) {
+        this.nombreD= nombreD;
     }
 
-    public String getDescripcionE() {
-        return descripcionE;
+    public String getDescripcionD() {
+        return descripcionD;
     }
 
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
+    public void setDescripcionD(String descripcionD) {
+        this.descripcionD = descripcionD;
     }
-    
-    
+
+    public String getPeriodoD() {
+        return periodoD;
+    }
+
+    public void setPeriodoD(String periodoD) {
+        this.periodoD = periodoD;
+    }
+
+    public String getImgD() {
+        return imgD;
+    }
+
+    public void setImgD(String imgD) {
+        this.imgD = imgD;
+    }
+
 }

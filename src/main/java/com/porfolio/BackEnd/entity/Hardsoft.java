@@ -53,9 +53,6 @@ public class Hardsoft {
 
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
-    }
-
-    
-    
+    }    
     
 }

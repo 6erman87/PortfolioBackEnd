@@ -5,12 +5,16 @@ import jakarta.validation.constraints.NotBlank;
 
 
 public class dtoProyecto {
+    
     @NotBlank
     private String nombreP;
+    
     @NotBlank
     private String descripcionP;
+    
     @NotBlank
     private String fechaP;
+    
     @NotBlank
     private String linkP;
 
@@ -23,6 +27,8 @@ public class dtoProyecto {
         this.fechaP = fechaP;
         this.linkP = linkP;
     }
+    
+     //Getter & Setter
 
     public String getNombreP() {
         return nombreP;

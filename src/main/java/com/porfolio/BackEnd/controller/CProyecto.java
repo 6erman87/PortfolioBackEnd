@@ -37,7 +37,7 @@ public class CProyecto {
     @GetMapping("/detail/{id}")
     public ResponseEntity<Proyecto> getById(@PathVariable("id") int id) {
         if (!sProyecto.existsById(id)) {
-            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
 
         Proyecto proyecto = sProyecto.getOne(id).get();
