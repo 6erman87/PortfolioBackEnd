@@ -27,14 +27,10 @@ public class Persona {
     private String profesion;
 
     @NotNull
-    @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String descripcion;
 
-    @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String banner;
 
-    @NotNull
-    @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String img;
 
     public Persona() {
