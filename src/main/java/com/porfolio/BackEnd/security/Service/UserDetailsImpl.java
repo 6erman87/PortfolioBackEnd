@@ -1,4 +1,3 @@
-
 package com.porfolio.BackEnd.security.Service;
 
 import com.porfolio.BackEnd.security.Entity.Usuario;
@@ -10,14 +9,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserDetailsImpl implements UserDetailsService{
+public class UserDetailsImpl implements UserDetailsService {
+
     @Autowired
     UsuarioService usuarioService;
 
     @Override
     public UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException {
         Usuario usuario = usuarioService.getByNombreUsuario(nombreUsuario).get();
-        return UsuarioPrincipal.build(usuario);       
+        return UsuarioPrincipal.build(usuario);
     }
-    
+
 }

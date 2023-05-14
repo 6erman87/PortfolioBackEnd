@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/explab")
 @CrossOrigin(origins = "https://gnbfrontend.web.app")
-//@CrossOrigin(origins = {"https://gnbfrontend.web.app", "http://localhost:4200"})
+//@CrossOrigin(origins = "https://gnbfrontend.web.app", "http://localhost:4200"})
 public class CExperiencia {
 
     @Autowired
@@ -40,7 +40,7 @@ public class CExperiencia {
         if (!sExperiencia.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe ID"), HttpStatus.NOT_FOUND);
         }
-        
+
         Experiencia experiencia = sExperiencia.getOne(id).get();
         return new ResponseEntity(experiencia, HttpStatus.OK);
     }
@@ -63,13 +63,12 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Experiencia experiencia = new Experiencia
-                                 (dtoexperiencia.getNombreE(),
-                                  dtoexperiencia.getPuestoE(), 
-                                  dtoexperiencia.getPeriodoE(), 
-                                  dtoexperiencia.getDescripcionE(),
-                                  dtoexperiencia.getImg());
-         sExperiencia.save(experiencia);
+        Experiencia experiencia = new Experiencia(dtoexperiencia.getNombreE(),
+                dtoexperiencia.getPuestoE(),
+                dtoexperiencia.getPeriodoE(),
+                dtoexperiencia.getDescripcionE(),
+                dtoexperiencia.getImg());
+        sExperiencia.save(experiencia);
 
         return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
     }
@@ -92,7 +91,7 @@ public class CExperiencia {
         }
 
         Experiencia experiencia = sExperiencia.getOne(id).get();
-        
+
         experiencia.setNombreE(dtoexperiencia.getNombreE());
         experiencia.setPuestoE(dtoexperiencia.getPuestoE());
         experiencia.setPeriodoE(dtoexperiencia.getPeriodoE());
@@ -100,8 +99,8 @@ public class CExperiencia {
         experiencia.setImg(dtoexperiencia.getImg());
 
         sExperiencia.save(experiencia);
-        
+
         return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);
 
-    }   
+    }
 }

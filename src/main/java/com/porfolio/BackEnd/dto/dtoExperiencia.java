@@ -6,19 +6,18 @@ public class dtoExperiencia {
 
     @NotBlank
     private String nombreE;
-    
+
     @NotBlank
     private String puestoE;
-    
+
     @NotBlank
     private String periodoE;
-    
+
     @NotBlank
     private String descripcionE;
 
     private String img;
-
-    //Constructores
+    
     public dtoExperiencia() {
     }
 
@@ -29,7 +28,6 @@ public class dtoExperiencia {
         this.descripcionE = descripcionE;
         this.img = img;
     }
-    //Getter & Setter
 
     public String getNombreE() {
         return nombreE;

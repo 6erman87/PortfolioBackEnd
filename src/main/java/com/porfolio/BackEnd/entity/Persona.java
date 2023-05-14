@@ -29,7 +29,7 @@ public class Persona {
     @NotNull
     @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String descripcion;
-    
+
     @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String banner;
 
@@ -88,8 +88,8 @@ public class Persona {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-       public String getBanner() {
+
+    public String getBanner() {
         return banner;
     }
 
@@ -106,14 +106,3 @@ public class Persona {
     }
 
 }
-
-//    @NotNull
-//    @Size (min = 1, max = 50, message = "no cumple con la longitud")
-//    private String nombre;
-//    
-//    @NotNull
-//    @Size (min = 1, max = 50, message = "no cumple con la longitud")
-//    private String apellido;
-//        
-//    @Size (min = 1, max = 50, message = "no cumple con la longitud")
-//    private String img;

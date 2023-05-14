@@ -1,9 +1,8 @@
 package com.porfolio.BackEnd.security.Controller;
 
 public class Mensaje {
+
     private String mensaje;
-    
-    //Constructor
 
     public Mensaje() {
     }
@@ -12,8 +11,6 @@ public class Mensaje {
         this.mensaje = mensaje;
     }
 
-    //Getter & Setter    
-
     public String getMensaje() {
         return mensaje;
     }
@@ -21,6 +18,5 @@ public class Mensaje {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    
+
 }

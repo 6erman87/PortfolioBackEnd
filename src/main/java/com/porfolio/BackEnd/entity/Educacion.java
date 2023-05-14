@@ -4,11 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-//import jakarta.validation.constraints.NotNull;
-//import jakarta.validation.constraints.Size;
 
 @Entity
 public class Educacion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -16,9 +15,9 @@ public class Educacion {
     private String nombreD;
 
     private String descripcionD;
-    
+
     private String periodoD;
-    
+
     private String imgD;
 
     public Educacion() {
@@ -32,8 +31,6 @@ public class Educacion {
 
     }
 
-    //Getters and setters
-    
     public int getId() {
         return id;
     }
@@ -47,7 +44,7 @@ public class Educacion {
     }
 
     public void setNombreD(String nombreD) {
-        this.nombreD= nombreD;
+        this.nombreD = nombreD;
     }
 
     public String getDescripcionD() {

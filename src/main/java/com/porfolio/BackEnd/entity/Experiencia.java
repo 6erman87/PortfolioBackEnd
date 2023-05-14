@@ -14,15 +14,15 @@ public class Experiencia {
     private int id;
     
     @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String nombreE;
     
     @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String puestoE;
     
     @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String periodoE;
     
     @NotNull

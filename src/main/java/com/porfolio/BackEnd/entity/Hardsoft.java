@@ -11,16 +11,17 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 public class Hardsoft {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     @NotNull
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String nombre;
-    
-    @Min(value = 0, message="el porcentaje mínimo es 0")
-    @Max(value = 100, message="el porcentaje máximo es 100")
+
+    @Min(value = 0, message = "el porcentaje mínimo es 0")
+    @Max(value = 100, message = "el porcentaje máximo es 100")
     private int porcentaje;
 
     public Hardsoft() {
@@ -53,6 +54,6 @@ public class Hardsoft {
 
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
-    }    
-    
+    }
+
 }

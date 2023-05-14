@@ -12,9 +12,8 @@ public class dtoPersona {
     private String profesion;
     @NotBlank
     private String descripcion;
-    
+    @NotBlank
     private String banner;
-    
     @NotBlank
     private String img;
 
@@ -43,8 +42,8 @@ public class dtoPersona {
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;     
-    }            
+        this.apellido = apellido;
+    }
 
     public String getProfesion() {
         return profesion;
@@ -61,7 +60,7 @@ public class dtoPersona {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+
     public String getBanner() {
         return banner;
     }
@@ -69,7 +68,6 @@ public class dtoPersona {
     public void setBanner(String banner) {
         this.banner = banner;
     }
-    
 
     public String getImg() {
         return img;
@@ -78,6 +76,5 @@ public class dtoPersona {
     public void setImg(String img) {
         this.img = img;
     }
-    
-    
+
 }

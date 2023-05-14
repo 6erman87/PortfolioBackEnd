@@ -13,19 +13,19 @@ public class Proyecto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     @NotNull
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String nombreP;
-    
+
     @NotNull
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String descripcionP;
-    
+
     @NotNull
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String fechaP;
-    
+
     @NotNull
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String linkP;

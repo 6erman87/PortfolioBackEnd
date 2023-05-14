@@ -69,7 +69,7 @@ public class CEducacion {
                 dtoeducacion.getPeriodoD(),
                 dtoeducacion.getImgD());
         sEducacion.save(educacion);
-        
+
         return new ResponseEntity(new Mensaje("Educación creada"), HttpStatus.OK);
     }
 
@@ -78,11 +78,11 @@ public class CEducacion {
         if (!sEducacion.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
-        
+
         if (sEducacion.existsByNombreD(dtoeducacion.getNombreD()) && sEducacion.getByNombreD(dtoeducacion.getNombreD()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
-        
+
         if (StringUtils.isBlank(dtoeducacion.getNombreD())) {
             return new ResponseEntity(new Mensaje("El campo no puede estar vacío"), HttpStatus.BAD_REQUEST);
         }

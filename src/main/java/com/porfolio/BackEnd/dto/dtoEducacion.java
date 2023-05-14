@@ -6,10 +6,10 @@ public class dtoEducacion {
 
     @NotBlank
     private String nombreD;
-    
+
     @NotBlank
     private String descripcionD;
-    
+
     @NotBlank
     private String periodoD;
 

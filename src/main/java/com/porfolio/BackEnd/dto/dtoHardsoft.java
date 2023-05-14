@@ -1,10 +1,9 @@
-
 package com.porfolio.BackEnd.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-
 public class dtoHardsoft {
+
     @NotBlank
     private String nombre;
     @NotBlank
@@ -13,7 +12,7 @@ public class dtoHardsoft {
     public dtoHardsoft() {
     }
 
-    public dtoHardsoft (String nombre, int porcentaje) {
+    public dtoHardsoft(String nombre, int porcentaje) {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
     }
@@ -33,6 +32,5 @@ public class dtoHardsoft {
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
-    
+
 }
