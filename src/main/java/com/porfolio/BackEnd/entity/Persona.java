@@ -91,7 +91,7 @@ public class Persona {
     }
 
     public void setBanner(String banner) {
-        this.img = banner;
+        this.banner = banner;
     }
 
     public String getImg() {
