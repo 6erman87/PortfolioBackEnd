@@ -28,7 +28,8 @@ public class Persona {
 
     @NotNull
     private String descripcion;
-
+    
+    @NotNull
     private String banner;
 
     private String img;
